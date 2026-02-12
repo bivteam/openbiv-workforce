@@ -1,0 +1,24 @@
+[project]
+name = "openbiv_workforce"
+version = "0.1.0"
+description = "openbiv-workforce using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]==1.9.3"
+]
+
+[project.scripts]
+openbiv_workforce = "openbiv_workforce.main:run"
+run_crew = "openbiv_workforce.main:run"
+train = "openbiv_workforce.main:train"
+replay = "openbiv_workforce.main:replay"
+test = "openbiv_workforce.main:test"
+run_with_trigger = "openbiv_workforce.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
