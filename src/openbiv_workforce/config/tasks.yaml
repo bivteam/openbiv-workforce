@@ -1,35 +1,36 @@
-sales_strategy_task:
+intake_project_task:
   description: >
-    Dựa trên input khách hàng gồm ngành nghề, mục tiêu, ngân sách tháng và kênh chính,
-    hãy đề xuất 2 phương án gói dịch vụ phù hợp cho BIV. Mỗi phương án cần có:
-    - phạm vi công việc
-    - KPI kỳ vọng trong 30-60 ngày
-    - mức đầu tư phù hợp
-    - điểm khác biệt chính.
+    Nhận thông tin dự án từ input gồm: tên dự án, lĩnh vực, mục tiêu kinh doanh,
+    ngân sách dự kiến, deadline và ghi chú thêm.
+    Hãy chuẩn hoá thành project brief gồm:
+    - mục tiêu SMART
+    - phạm vi triển khai
+    - giả định quan trọng
+    - rủi ro chính
+    - tiêu chí thành công.
   expected_output: >
-    Bản tư vấn sales ngắn gọn bằng tiếng Việt với 2 phương án rõ ràng,
-    có bảng so sánh nhanh và khuyến nghị chốt gói.
-  agent: sales_agent
+    Bản Project Brief tiếng Việt, rõ ràng, có checklist xác nhận với khách hàng.
+  agent: project_intake_agent
 
-content_plan_task:
+research_project_task:
   description: >
-    Từ phương án sales đã đề xuất, xây dựng kế hoạch content 14 ngày cho khách hàng:
-    - 5-7 trụ cột nội dung
-    - lịch đăng mẫu theo tuần
-    - 5 ý tưởng bài viết/video có CTA cụ thể
-    - tiêu chí đo hiệu quả.
+    Dựa trên project brief, thực hiện research nhanh để phục vụ lập kế hoạch:
+    - chân dung khách hàng mục tiêu
+    - insight mua hàng/chuyển đổi
+    - 3-5 đối thủ hoặc benchmark gần nhất
+    - cơ hội khác biệt cho BIV.
   expected_output: >
-    Kế hoạch content 14 ngày bằng tiếng Việt, dễ giao cho team triển khai ngay.
-  agent: content_agent
+    Báo cáo research ngắn gọn dạng bullet, có kết luận hành động được ngay.
+  agent: market_research_agent
 
-cskh_playbook_task:
+planning_project_task:
   description: >
-    Từ bối cảnh sales + content, thiết kế playbook CSKH sau bán trong 30 ngày đầu:
-    - checklist onboarding
-    - lịch chạm khách hàng
-    - mẫu phản hồi khi có khiếu nại
-    - KPI giữ chân/tái ký.
+    Từ project brief + research, tạo kế hoạch triển khai cho khách hàng trong 30-60 ngày:
+    - chiến lược tổng thể
+    - roadmap theo tuần
+    - KPI theo giai đoạn
+    - phân bổ ngân sách tham khảo
+    - danh sách đầu việc ưu tiên tuần 1.
   expected_output: >
-    Playbook CSKH dạng checklist + mẫu câu trả lời + KPI theo tuần,
-    dùng được ngay cho đội vận hành.
-  agent: cskh_agent
+    Kế hoạch triển khai dự án dạng markdown, đủ để gửi khách và giao việc nội bộ.
+  agent: project_planning_agent

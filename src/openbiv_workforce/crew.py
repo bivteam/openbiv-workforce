@@ -12,43 +12,43 @@ class OpenbivWorkforce():
     tasks: List[Task]
 
     @agent
-    def sales_agent(self) -> Agent:
+    def project_intake_agent(self) -> Agent:
         return Agent(
-            config=self.agents_config['sales_agent'],
+            config=self.agents_config['project_intake_agent'],
             verbose=True
         )
 
     @agent
-    def content_agent(self) -> Agent:
+    def market_research_agent(self) -> Agent:
         return Agent(
-            config=self.agents_config['content_agent'],
+            config=self.agents_config['market_research_agent'],
             verbose=True
         )
 
     @agent
-    def cskh_agent(self) -> Agent:
+    def project_planning_agent(self) -> Agent:
         return Agent(
-            config=self.agents_config['cskh_agent'],
+            config=self.agents_config['project_planning_agent'],
             verbose=True
         )
 
     @task
-    def sales_strategy_task(self) -> Task:
+    def intake_project_task(self) -> Task:
         return Task(
-            config=self.tasks_config['sales_strategy_task'],
+            config=self.tasks_config['intake_project_task'],
         )
 
     @task
-    def content_plan_task(self) -> Task:
+    def research_project_task(self) -> Task:
         return Task(
-            config=self.tasks_config['content_plan_task'],
+            config=self.tasks_config['research_project_task'],
         )
 
     @task
-    def cskh_playbook_task(self) -> Task:
+    def planning_project_task(self) -> Task:
         return Task(
-            config=self.tasks_config['cskh_playbook_task'],
-            output_file='openbiv_workforce_output.md'
+            config=self.tasks_config['planning_project_task'],
+            output_file='openbiv_project_plan.md'
         )
 
     @crew

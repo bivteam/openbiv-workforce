@@ -10,10 +10,12 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 def run():
     """Run the crew."""
     inputs = {
-        "nganh_nghe": "Spa/Thẩm mỹ",
-        "muc_tieu": "Tăng inbox và lịch hẹn",
-        "ngan_sach_thang": "15.000.000 VND",
-        "kenh_chinh": "Facebook"
+        "ten_du_an": "Tăng trưởng khách hàng cho Spa",
+        "linh_vuc": "Spa/Thẩm mỹ",
+        "muc_tieu_kinh_doanh": "Tăng lịch hẹn mới + tăng doanh thu dịch vụ chính",
+        "ngan_sach_du_kien": "15.000.000 VND/tháng",
+        "deadline": "30 ngày",
+        "ghi_chu_them": "Kênh chính Facebook, khách ưu tiên lead chất lượng"
     }
 
     try:
@@ -24,10 +26,12 @@ def run():
 
 def train():
     inputs = {
-        "nganh_nghe": "Spa/Thẩm mỹ",
-        "muc_tieu": "Tăng inbox và lịch hẹn",
-        "ngan_sach_thang": "15.000.000 VND",
-        "kenh_chinh": "Facebook"
+        "ten_du_an": "Tăng trưởng khách hàng cho Spa",
+        "linh_vuc": "Spa/Thẩm mỹ",
+        "muc_tieu_kinh_doanh": "Tăng lịch hẹn mới + tăng doanh thu dịch vụ chính",
+        "ngan_sach_du_kien": "15.000.000 VND/tháng",
+        "deadline": "30 ngày",
+        "ghi_chu_them": "Kênh chính Facebook, khách ưu tiên lead chất lượng"
     }
     try:
         OpenbivWorkforce().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
@@ -44,10 +48,12 @@ def replay():
 
 def test():
     inputs = {
-        "nganh_nghe": "Spa/Thẩm mỹ",
-        "muc_tieu": "Tăng inbox và lịch hẹn",
-        "ngan_sach_thang": "15.000.000 VND",
-        "kenh_chinh": "Facebook"
+        "ten_du_an": "Tăng trưởng khách hàng cho Spa",
+        "linh_vuc": "Spa/Thẩm mỹ",
+        "muc_tieu_kinh_doanh": "Tăng lịch hẹn mới + tăng doanh thu dịch vụ chính",
+        "ngan_sach_du_kien": "15.000.000 VND/tháng",
+        "deadline": "30 ngày",
+        "ghi_chu_them": "Kênh chính Facebook, khách ưu tiên lead chất lượng"
     }
 
     try:
@@ -69,10 +75,12 @@ def run_with_trigger():
 
     inputs = {
         "crewai_trigger_payload": trigger_payload,
-        "nganh_nghe": trigger_payload.get("nganh_nghe", ""),
-        "muc_tieu": trigger_payload.get("muc_tieu", ""),
-        "ngan_sach_thang": trigger_payload.get("ngan_sach_thang", ""),
-        "kenh_chinh": trigger_payload.get("kenh_chinh", "")
+        "ten_du_an": trigger_payload.get("ten_du_an", ""),
+        "linh_vuc": trigger_payload.get("linh_vuc", ""),
+        "muc_tieu_kinh_doanh": trigger_payload.get("muc_tieu_kinh_doanh", ""),
+        "ngan_sach_du_kien": trigger_payload.get("ngan_sach_du_kien", ""),
+        "deadline": trigger_payload.get("deadline", ""),
+        "ghi_chu_them": trigger_payload.get("ghi_chu_them", "")
     }
 
     try:
