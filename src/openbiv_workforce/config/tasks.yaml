@@ -1,17 +1,35 @@
-research_task:
+sales_strategy_task:
   description: >
-    Conduct a thorough research about {topic}
-    Make sure you find any interesting and relevant information given
-    the current year is {current_year}.
+    Dựa trên input khách hàng gồm ngành nghề, mục tiêu, ngân sách tháng và kênh chính,
+    hãy đề xuất 2 phương án gói dịch vụ phù hợp cho BIV. Mỗi phương án cần có:
+    - phạm vi công việc
+    - KPI kỳ vọng trong 30-60 ngày
+    - mức đầu tư phù hợp
+    - điểm khác biệt chính.
   expected_output: >
-    A list with 10 bullet points of the most relevant information about {topic}
-  agent: researcher
+    Bản tư vấn sales ngắn gọn bằng tiếng Việt với 2 phương án rõ ràng,
+    có bảng so sánh nhanh và khuyến nghị chốt gói.
+  agent: sales_agent
 
-reporting_task:
+content_plan_task:
   description: >
-    Review the context you got and expand each topic into a full section for a report.
-    Make sure the report is detailed and contains any and all relevant information.
+    Từ phương án sales đã đề xuất, xây dựng kế hoạch content 14 ngày cho khách hàng:
+    - 5-7 trụ cột nội dung
+    - lịch đăng mẫu theo tuần
+    - 5 ý tưởng bài viết/video có CTA cụ thể
+    - tiêu chí đo hiệu quả.
   expected_output: >
-    A fully fledged report with the main topics, each with a full section of information.
-    Formatted as markdown without '```'
-  agent: reporting_analyst
+    Kế hoạch content 14 ngày bằng tiếng Việt, dễ giao cho team triển khai ngay.
+  agent: content_agent
+
+cskh_playbook_task:
+  description: >
+    Từ bối cảnh sales + content, thiết kế playbook CSKH sau bán trong 30 ngày đầu:
+    - checklist onboarding
+    - lịch chạm khách hàng
+    - mẫu phản hồi khi có khiếu nại
+    - KPI giữ chân/tái ký.
+  expected_output: >
+    Playbook CSKH dạng checklist + mẫu câu trả lời + KPI theo tuần,
+    dùng được ngay cho đội vận hành.
+  agent: cskh_agent
